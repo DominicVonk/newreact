@@ -1,0 +1,77 @@
+{
+	"name": "newreact",
+	"displayName": "NewReact",
+	"description": "New React File",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"author": {
+		"name": "DominicVonk",
+		"email": "dominic@vonk.io"
+	},
+	"publisher": "DominicVonk",
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "newreact.createComponent",
+				"title": "New React Component"
+			},
+			{
+				"command": "newreact.createPage",
+				"title": "New React Page"
+			},
+			{
+				"command": "newreact.createFunctionComponent",
+				"title": "New React Function Component"
+			},
+			{
+				"command": "newreact.createFunctionPage",
+				"title": "New React Function Page"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "newreact.createComponent",
+					"group": "newfile"
+				},
+				{
+					"command": "newreact.createPage",
+					"group": "newfile"
+				},
+				{
+					"command": "newreact.createFunctionComponent",
+					"group": "newfile"
+				},
+				{
+					"command": "newreact.createFunctionPage",
+					"group": "newfile"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.50.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	}
+}
