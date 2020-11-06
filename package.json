@@ -45,19 +45,19 @@
 			"explorer/context": [
 				{
 					"command": "newreact.createComponent",
-					"group": "newfile"
+					"group": "navigation"
 				},
 				{
 					"command": "newreact.createPage",
-					"group": "newfile"
+					"group": "navigation"
 				},
 				{
 					"command": "newreact.createFunctionComponent",
-					"group": "newfile"
+					"group": "navigation"
 				},
 				{
 					"command": "newreact.createFunctionPage",
-					"group": "newfile"
+					"group": "navigation"
 				}
 			]
 		}
