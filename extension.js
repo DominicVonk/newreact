@@ -17,7 +17,7 @@ function createFile(uri, file, data, ext = '.tsx') {
 let templates = {
 	component: (className) => `import React, {Component} from "react";
 
-class ${className} extends Component {
+export class ${className} extends Component {
 	render() {
 		return <div>${className}</div>;
 	}
@@ -25,9 +25,9 @@ class ${className} extends Component {
 
 export default ${className};
 `,
-	functionComponent: (functionName) => `import React from "react";
+	functionComponent: (functionName) => `import React, {FunctionComponent} from "react";
 
-const ${functionName} = (props) => {
+export const ${functionName}: FunctionComponent = (props) => {
 	return <div>${functionName}</div>
 };
 
@@ -37,7 +37,7 @@ export default ${functionName};
 
 import ${className}View from "./${className}.view";
 
-class ${className} extends Component {
+export class ${className} extends Component {
 	render() {
 		return ${className}View(this);
 	}
@@ -48,16 +48,16 @@ export default ${className};
 	pageView: (className) => `import React from "react";
 import ${className} from "./${className}";
 
-const ${className}View = (self: ${className}) => {
+export const ${className}View = (self: ${className}) => {
 	return (<div>${className}</div>);
 }
 
 export default ${className}View;
 `,
-	pageFunction: (functionName) => `import { Component } from "react";
+	pageFunction: (functionName) => `import { FunctionComponent } from "react";
 import ${functionName}View from "./${functionName}.view";
 
-const ${functionName} = (props: any) => {
+export const ${functionName}: FunctionComponent = (props: any) => {
 	return ${functionName}View(props);
 };
 
@@ -65,7 +65,7 @@ export default ${functionName};
 `,
 	pageFunctionView: (functionName) => `import React from "react";
 
-const ${functionName}View = (props: any) => {
+export const ${functionName}View = (props: any) => {
 	return (<div>${functionName}</div>);
 }
 
